@@ -6,15 +6,6 @@ Fixed::Fixed() :
 	std::cout << "Default constructor called" << std::endl;
 }
 
-//Fixed::Fixed(const int value)
-//{
-//	_value = value << _fbits;
-//}
-//Fixed::Fixed(const float value)
-//{
-//	_value = roundf(value * (1 << _fbits));
-//}
-
 Fixed::Fixed (const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
