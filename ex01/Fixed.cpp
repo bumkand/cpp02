@@ -44,17 +44,17 @@ Fixed::Fixed(const int value)
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	_value = (int)(roundf(value * (1 << _fbits)));
+	_value = static_cast<int>((roundf(value * (1 << _fbits))));
 }
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)_value / ( 1 << _fbits));
+	return (static_cast<float>(_value) / ( 1 << _fbits));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (_value >> _fbits);
+	return (_value / (1 << _fbits));
 }
 
 std::ostream& operator<<(std::ostream& ost, const Fixed& other)
